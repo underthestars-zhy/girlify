@@ -21,15 +21,30 @@ const app = await Spectrum({
 process.on("SIGINT", () => void app.stop());
 process.on("SIGTERM", () => void app.stop());
 
-console.log("girlify listening — agentic mode (claude-sonnet-4.5 via openrouter)");
+console.log("girlify listening — agentic mode via openrouter");
 
 for await (const [space, message] of app.messages) {
-  await space.responding(async () => {
-    try {
-      await runAgent(space, message);
-    } catch (err) {
-      console.error(`[${space.id}] agent error:`, err);
-      await space.send("my brain short-circuited 🫠 try again?");
-    }
-  });
+  // Fire-and-forget so a newer message can arrive and abort an in-flight run
+  // inside runAgent. Errors are handled locally to prevent unhandled rejections.
+  void space
+    .responding(async () => {
+      try {
+        await runAgent(space, message);
+      } catch (err) {
+        const e = err as {
+          responseBody?: string;
+          statusCode?: number;
+          message?: string;
+          cause?: unknown;
+        };
+        console.error(`[${space.id}] agent error:`, {
+          message: e.message,
+          statusCode: e.statusCode,
+          responseBody: e.responseBody,
+          cause: e.cause,
+        });
+        await space.send("my brain short-circuited 🫠 try again?");
+      }
+    })
+    .catch((err) => console.error(`[${space.id}] responding wrapper error:`, err));
 }

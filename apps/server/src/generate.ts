@@ -1,7 +1,7 @@
 import type { Photo } from "./types";
 
 const PROMPT =
-  "这些照片都是一个人，但是这些照片都经过美颜，请参考这些照片，在第一张照片上还原出这位女生没有美颜过的形象";
+  "这些照片都是同一个人，但是这些照片都经过美颜，请参考这些照片，在第一张照片上还原出这个人没有美颜过的真实形象。";
 const MODEL = "google/gemini-3-pro-image-preview";
 
 export async function generateUnfilteredImage(photos: Photo[]): Promise<Photo> {
