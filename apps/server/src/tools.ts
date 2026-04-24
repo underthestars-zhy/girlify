@@ -6,38 +6,10 @@ import type { Photo } from "./types";
 
 export type SpaceState = {
   buffer: Photo[];
-  pendingImage: Photo | null;
 };
 
 export function buildTools(space: Space, state: SpaceState) {
   return {
-    addImageToBuffer: tool({
-      description:
-        "Add the image from the user's most recent message to the buffer. Call this when a new selfie arrives that should be included in the next generation. Fails if the user's latest message didn't contain an image.",
-      inputSchema: z.object({
-        reason: z
-          .string()
-          .optional()
-          .describe("Short note on why you're buffering this one (for logs)."),
-      }),
-      execute: async () => {
-        if (!state.pendingImage) {
-          return {
-            ok: false as const,
-            error:
-              "No pending image on the current message. The user's latest message was not an image.",
-          };
-        }
-        state.buffer.push(state.pendingImage);
-        state.pendingImage = null;
-        return {
-          ok: true as const,
-          index: state.buffer.length - 1,
-          totalBuffered: state.buffer.length,
-        };
-      },
-    }),
-
     removeImageFromBuffer: tool({
       description:
         "Remove a buffered image by its index. Use after the user retracts a photo or you decide one is bad (blurry, duplicate, not a face).",
