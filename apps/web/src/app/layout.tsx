@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "girlify — send selfies, receive reality",
-  description: "text us your facetuned pics, we send back the raw dog version 💀",
+  title: "girlify — send facetuned pics, receive reality",
+  description: "text us any facetuned pic (yours, your ex's, whoever's). we send back the raw dog version 💀",
 };
 
 export default function RootLayout({

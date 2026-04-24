@@ -15,7 +15,7 @@ export default function Home() {
             girl<span className="text-[#ff2d87]">ify</span>
           </h1>
           <p className="max-w-sm text-balance text-lg font-semibold text-zinc-800">
-            text us your most facetuned selfies. we send back what you{" "}
+            text us facetuned pics — yours, your ex's, whoever's. we send back what they{" "}
             <span className="bg-[#ffe74c] px-1 italic">actually</span> look like.
           </p>
           <p className="max-w-sm text-sm font-medium text-zinc-600">
