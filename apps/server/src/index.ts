@@ -16,6 +16,9 @@ const app = await Spectrum({
   projectId,
   projectSecret,
   providers: [imessage.config()],
+  // Split iMessage albums into individual messages — our auto-buffer loop
+  // expects one photo per inbound message.
+  options: { flattenGroups: true },
 });
 
 process.on("SIGINT", () => void app.stop());

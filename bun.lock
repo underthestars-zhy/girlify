@@ -13,7 +13,7 @@
       "dependencies": {
         "@openrouter/ai-sdk-provider": "^2.8.0",
         "ai": "^6.0.168",
-        "spectrum-ts": "latest",
+        "spectrum-ts": "^0.9.1",
         "zod": "^4.3.6",
       },
       "devDependencies": {
@@ -984,7 +984,7 @@
 
     "source-map-js": ["source-map-js@1.2.1", "", {}, "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA=="],
 
-    "spectrum-ts": ["spectrum-ts@0.9.0", "", { "dependencies": { "@photon-ai/advanced-imessage": "^0.4.3", "@photon-ai/imessage-kit": "^3.0.0", "@photon-ai/whatsapp-business": "^0.1.1", "@repeaterjs/repeater": "^3.0.6", "better-grpc": "^0.3.2", "mime-types": "^3.0.1", "open-graph-scraper": "^6.11.0", "type-fest": "^5.4.1", "vcf": "^2.1.2", "zod": "^4.2.1" }, "peerDependencies": { "ffmpeg-static": "^5", "typescript": "^5" }, "optionalPeers": ["ffmpeg-static"] }, "sha512-i94mkFiIIDtF9PAZ9lfrAPTtUTI8mdM6gXyv0Ck4PVqrkUGmNSDP89FV/7CxZNzvl6qfvJP1pH389dJcsn1SSA=="],
+    "spectrum-ts": ["spectrum-ts@0.9.1", "", { "dependencies": { "@photon-ai/advanced-imessage": "^0.4.3", "@photon-ai/imessage-kit": "^3.0.0", "@photon-ai/whatsapp-business": "^0.1.1", "@repeaterjs/repeater": "^3.0.6", "better-grpc": "^0.3.2", "mime-types": "^3.0.1", "open-graph-scraper": "^6.11.0", "type-fest": "^5.4.1", "vcf": "^2.1.2", "zod": "^4.2.1" }, "peerDependencies": { "ffmpeg-static": "^5", "typescript": "^5" }, "optionalPeers": ["ffmpeg-static"] }, "sha512-l9oog/Z853hYnCCf06ZUPwWr5I/p2FIgOkyvzkTi5azrHAn1unM8Hprop42Ov7rMuLKu1fyE2iiRCz8fcixKTw=="],
 
     "stable-hash": ["stable-hash@0.0.5", "", {}, "sha512-+L3ccpzibovGXFK+Ap/f8LOS0ahMrHTf3xu7mMLSpEGU0EO9ucaysSylKo9eRDFNhWve/y275iPmIZ4z39a9iA=="],
 
